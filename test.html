@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Auditorium Controls</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="styles.css" type="text/css" rel="stylesheet">
+<script src="main.js"></script>
+
+<html>
+<table>
+  <colgroup>
+    <col span="1" style="width: 110px">
+    <col span="1" style="width: auto">
+    <col span="1" style="width: 135px;">
+ </colgroup>
+  <tr>
+    <td colspan="3"><img src="https://www.fis.edu/uploaded/themes/default_20/images/main_logo.svg" alt="FIS Logo" style="height:60px;"></td>
+  </tr>
+  <tr>
+    <td>All</td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="AllRng" oninput="RangesyncAll()"></td>
+    <td><button type="button" onclick="RangeFuncAll('on')">On</button>&nbsp<button type="button" onclick="RangeFuncAll('off')">Off</button></td>
+  </tr>
+  <tr>
+    <td>Gallery</td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="GallaryRng"></td>
+    <td><button type="button" onclick="RangeFunc('GallaryRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('GallaryRng', 'off')">Off</button></td>
+  </tr>
+  <tr>
+    <td>Public Front</td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="PublicFRng"></td>
+    <td><button type="button" onclick="RangeFunc('PublicFRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('PublicFRng', 'off')">Off</button></td>
+  </tr>
+  <tr>
+    <td>Public Back</td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="PublicBRng"></td>
+    <td><button type="button" onclick="RangeFunc('PublicBRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('PublicBRng', 'off')">Off</button></td>
+  </tr>
+  <tr>
+    <td>Stage</td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="StageRng"></td>
+    <td><button type="button" onclick="RangeFunc('StageRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('StageRng', 'off')">Off</button></td>
+  </tr>
+</table>
+<p style="text-align: center; margin-bottom: 10px;">By Luke and Ruben&emsp;FIS Media</p>
+
+</html>
