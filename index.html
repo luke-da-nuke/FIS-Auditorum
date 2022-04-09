@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
+  <title>Auditorium</title>
+  <link rel="icon" type="image/x-icon" href="https://www.fis.edu/uploaded/themes/default_20/images/fis_favicon.ico">
+  <meta name="description" content="The control page for the lighting in the FIS Auditorium">
+	<meta name="keywords" content="Auditorium, FIS, Frankfurt International School, lights, control">
+</head>  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 /* * {
   box-sizing: border-box;
 } */
-@font-face {
+/* @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
   font-weight: 300;
   src: url(https://fonts.gstatic.com/s/ubuntu/v19/4iCv6KVjbNBYlgoC1CzjvWyNL4U.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
+} */
 
-body {
+* {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #000;
   color: rgb(255, 255, 255);
+}
+body {
+  background-color: #000;
 }
 button{
   outline: 0;
@@ -138,7 +145,47 @@ tr:nth-child(even) {
 */
 
 </style>
+<script>
+  var allids = ["AllRng", "GallaryRng", "PublicFRng", "PublicBRng", "StageRng"]
+  
 
+  function RangeFunc(id, state) {
+          var slider = document.getElementById(id);
+          if (state == "on")
+            slider.value= "255"
+          if (state == "off")
+            slider.value= "0"
+      }
+  function RangeFuncAll(state) {
+    
+    if (state == "on")
+      var i = 0
+      while (allids.length > i){
+        document.getElementById(allids[i]).value = 255;
+        i++;
+      }
+    if (state == "off")
+      var i = 0
+      while (allids.length > i){
+        document.getElementById(allids[i]).value = 0;
+        i++;
+      }
+  }
+
+  /*var AllSlider = document.getElementById("AllRng")
+  AllSlider.oninput */
+
+  function testfunc(){
+    AllSlider = document.getElementById("AllRng")
+    i = 0
+    while (allids.length > i){
+      x = document.getElementById(allids[i])
+      x.value = AllSlider.value
+      i++
+    }
+  }
+
+</script>
 
 <html>
 <table>
@@ -152,30 +199,30 @@ tr:nth-child(even) {
   </tr>
   <tr>
     <td>All</td>
-    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="myRange"></td>
-    <td><button type="button">On</button>&nbsp<button type="button">Off</button></td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="AllRng" oninput="testfunc()"></td>
+    <td><button type="button" onclick="RangeFuncAll('on')">On</button>&nbsp<button type="button" onclick="RangeFuncAll('off')">Off</button></td>
   </tr>
   <tr>
     <td>Gallery</td>
-    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="myRange"></td>
-    <td><button type="button">On</button>&nbsp<button type="button">Off</button></td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="GallaryRng"></td>
+    <td><button type="button" onclick="RangeFunc('GallaryRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('GallaryRng', 'off')">Off</button></td>
   </tr>
   <tr>
     <td>Public Front</td>
-    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="myRange"></td>
-    <td><button type="button">On</button>&nbsp<button type="button">Off</button></td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="PublicFRng"></td>
+    <td><button type="button" onclick="RangeFunc('PublicFRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('PublicFRng', 'off')">Off</button></td>
   </tr>
   <tr>
     <td>Public Back</td>
-    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="myRange"></td>
-    <td><button type="button">On</button>&nbsp<button type="button">Off</button></td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="PublicBRng"></td>
+    <td><button type="button" onclick="RangeFunc('PublicBRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('PublicBRng', 'off')">Off</button></td>
   </tr>
   <tr>
     <td>Stage</td>
-    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="myRange"></td>
-    <td><button type="button">On</button>&nbsp<button type="button">Off</button></td>
+    <td><input type="range" min="0" max="255" value="50" name="name_of_slider" class="slider" id="StageRng"></td>
+    <td><button type="button" onclick="RangeFunc('StageRng', 'on')">On</button>&nbsp<button type="button" onclick="RangeFunc('StageRng', 'off')">Off</button></td>
   </tr>
 </table>
-<p style="text-align: center;">By Luke Plastow&emsp;FIS Media</p>
+<p style="text-align: center;">By Luke & Ruben&emsp;FIS Media</p>
 
 </html>
