@@ -40,11 +40,3 @@ var allids = ["AllRng", "GallaryRng", "PublicFRng", "PublicBRng", "StageRng"] //
       i++
     }
   }
-function testt(){
-  console.log("test");
-}
-  // function ButtonOnAnimation(state){
-  //   if(state == "on"){
-  //     document.getElementById("GallaryRngBtn").style.boxShadow = "4px 4px 0 #F4CD8A";
-  //   }
-  // }
