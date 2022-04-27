@@ -1,6 +1,6 @@
 var allids = ["AllRng", "GallaryRng", "PublicFRng", "PublicBRng", "StageRng"] //All HTML group id's
   
-
+// test
   function RangeFunc(id, state) { //func for changing slider value when pressing btn| state = on/off
           var slider = document.getElementById(id);
           if (state == "on")
