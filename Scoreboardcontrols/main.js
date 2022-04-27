@@ -3,7 +3,7 @@ var i = 0;
 function updatepoints(action, team){
     homepoints = document.getElementById("homepoints")
     awaypoints = document.getElementById("awaypoints")
-   
+    
     if(team == "home" && homepoints.value == ""){
         homepoints.value = 0;
     }
@@ -50,7 +50,7 @@ function reset(){
     awayteam.value = "null"
     i= 0
 }
-  
+
 function updatelink(){
     i++;
     localStorage.setItem("forceupdate", i)
